@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h2>Agregar Empleado</h2>
-    <form action="{{ route('empleados.store') }}" method="POST">
+    <form action="{{ route('agregar.empleado') }}" method="POST">
         @csrf
         <div class="form-group">
             <label for="nombre">Nombre:</label>

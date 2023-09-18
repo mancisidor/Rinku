@@ -22,6 +22,7 @@ Route::post('/calcular-sueldo', 'App\Http\Controllers\SalaryCalculatorController
 
 Route::get('/empleados', 'App\Http\Controllers\EmpleadoController@index')->name('empleados.index');
 Route::get('/empleados/create', 'App\Http\Controllers\EmpleadoController@create')->name('empleados.create');
+Route::post('/agregar-empleado', 'App\Http\Controllers\EmpleadoController@agregarEmpleado')->name('agregar.empleado');
 Route::post('/empleados/store', 'App\Http\Controllers\EmpleadoController@store')->name('empleados.store');
 Route::get('/empleados/edit/{id}', 'App\Http\Controllers\EmpleadoController@edit')->name('empleados.edit');
 Route::put('/empleados/update/{id}', 'App\Http\Controllers\EmpleadoController@update')->name('empleados.update');

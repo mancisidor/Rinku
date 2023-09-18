@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+
 use App\Models\Empleado; // importamos el modelo del empleado
 
 class EmpleadoController extends Controller
@@ -26,6 +28,18 @@ class EmpleadoController extends Controller
 
         return redirect()->route('empleados.index')
             ->with('success', 'Empleado creado exitosamente.');
+    }
+
+    public function agregarEmpleado(Request $request)
+    {
+        $nombre = $request->input('nombre');
+        $tipo = $request->input('tipo');
+        $horasTrabajadas = $request->input('horas_trabajadas');
+
+        // Llama al procedimiento almacenado
+        DB::statement('CALL sp_agregar_empleado(?, ?, ?)', [$nombre, $tipo, $horasTrabajadas]);
+
+        return redirect()->back()->with('success', 'Empleado agregado correctamente');
     }
 
     public function edit($id)
