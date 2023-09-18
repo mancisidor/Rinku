@@ -1,5 +1,5 @@
 <?php
-
+use app\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/calcular-sueldo', 'App\Http\Controllers\SalaryCalculatorController@showForm')->name('show.salary.form');
+Route::post('/calcular-sueldo', 'App\Http\Controllers\SalaryCalculatorController@calculateSalary')->name('calculate.salary');
+//Route::get('/calcular-sueldo', [SalaryCalculatorController::class, 'showForm'])->name('show.salary.form');
+//Route::post('calcular-sueldo', [SalaryCalculatorController::class, 'calculateSalary'])->name('calculate.salary');
+
+//Route::get('/calcular-sueldo', ['as' => 'show.salary.form', 'uses' => 'App\Http\Controllers\SalaryCalculatorController@showForm']);
+
+//Route::post('/calcular-sueldo', 'SalaryCalculatorController@calculateSalary')->name('calculate.salary');
