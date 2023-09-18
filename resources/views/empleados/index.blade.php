@@ -3,7 +3,7 @@
 @section('content')
 <div class="container">
     <h1>Lista de Empleados</h1>
-    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#agregarEmpleadoModal">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#crearEmpleadoModal">
         Agregar Empleado
     </button>
 

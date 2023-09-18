@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('empleados/index');
 });
 
 Route::get('/calcular-sueldo', 'App\Http\Controllers\SalaryCalculatorController@showForm')->name('show.salary.form');
